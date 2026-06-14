@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>DikshantGPT • How Well Do You Know Krutika?</title>
+  <meta name="description" content="DikshantGPT — Bestie Edition • A quiz invitation for close friends" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Confetti layer -->
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <!-- CRT scanline overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ===== Boot Screen ===== -->
+  <section id="boot" class="boot">
+    <div class="boot-inner">
+      <span id="boot-text" class="boot-text"></span><span class="bcaret">&#9611;</span>
+    </div>
+  </section>
+
+  <!-- ===== Main App ===== -->
+  <main id="app" class="app hidden">
+    <header class="titlebar">
+      <div class="dots" aria-hidden="true">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="title">
+        <span class="title-brand">DikshantGPT</span>
+        <span class="title-sub">Bestie Edition &bull; Krutika Knowledge Test</span>
+      </div>
+      <button id="infoBtn" class="info-btn" title="Model Information" aria-label="Model Information">&#9432;</button>
+    </header>
+
+    <div class="window">
+      <div id="chat" class="chat" aria-live="polite"></div>
+
+      <form id="inputForm" class="input-area" autocomplete="off">
+        <span class="prompt-sign" aria-hidden="true">&gt;</span>
+        <input id="userInput" class="user-input" type="text" placeholder="Type a message…" aria-label="Message to DikshantGPT" disabled />
+        <button type="submit" class="send-btn" aria-label="Send message">&#10148;</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== Side Panel: Model Information ===== -->
+  <aside id="sidePanel" class="side-panel" aria-hidden="true">
+    <div class="side-head">
+      <span>Model Information</span>
+      <button id="closePanel" class="close-panel" aria-label="Close panel">&#10005;</button>
+    </div>
+    <div class="side-body">
+      <div class="info-block">
+        <div class="info-label">Model Name</div>
+        <div class="info-value">DikshantGPT Bestie Edition</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Training Data</div>
+        <ul class="info-list">
+          <li>&#10003; Inside Jokes</li>
+          <li>&#10003; Late-Night Talks</li>
+          <li>&#10003; Krutika Stories</li>
+          <li>&#10003; Friendship Memories</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Accuracy</div>
+        <div class="info-value">100%</div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Bias</div>
+        <div class="info-value pink">Towards My Besties &#10084;&#65039;</div>
+      </div>
+      <div class="info-hint">
+        Hint: try asking <b>when is it?</b> or <b>who created you?</b>
+      </div>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay"></div>
+
+  <script src="friend.js"></script>
+</body>
+</html>
